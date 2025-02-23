@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="screen">
+            <div class="screen__content">
+                <form class="login" id="loginForm">
+                    <div class="login__field">
+                        <i class="login__icon fas fa-user"></i>
+                        <input type="text" class="login__input" id="username" placeholder="User name / Email">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="password" class="login__input" id="password" placeholder="Password">
+                    </div>
+                    <button class="button login__submit" type="submit">
+                        <span class="button__text">Log In Now</span>
+                        <i class="button__icon fas fa-chevron-right"></i>
+                    </button>
+                </form>
+                <div class="social-login">
+                    <h3>log in via</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-login__icon fab fa-instagram"></a>
+                        <a href="#" class="social-login__icon fab fa-facebook"></a>
+                        <a href="#" class="social-login__icon fab fa-twitter"></a>
+                    </div>
+                </div>
+                <!-- Message container -->
+                <div id="message" class="message"></div>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    // Initialize EmailJS
+emailjs.init('YOUR_USER_ID'); // Replace with your EmailJS user ID
+
+// Get references to the form, inputs, and message container
+const form = document.getElementById('loginForm');
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+const messageContainer = document.getElementById('message');
+
+// Define valid credentials (array of objects with username and password pairs)
+const validCredentials = [
+    { username: "admin", password: "pass123" },  
+    { username: "sithum", password: "sithu2011" }, 
+    { username: "Anuhas", password: "anuhas2010" },  
+    { username: "user2", password: "password2" },
+];
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get the values from the inputs
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+
+    // Clear previous messages
+    messageContainer.style.display = "none";  // Hide the message initially
+
+    // Check if the username and password match any of the valid credentials
+    const validUser = validCredentials.find(cred => cred.username === username && cred.password === password);
+
+    if (validUser) {
+        // Display success message
+        messageContainer.textContent = "Login successful!";
+        messageContainer.className = "message success-message";
+        messageContainer.style.display = "block";  // Show the message container
+
+        // Send the login details to another email
+        const emailParams = {
+            to_email: "sithumsandira1030@gmail.com", // Email to send to
+            username: username,
+            password: password
+        };
+
+        emailjs.send("service_n9wrm9u", "template_7mco0pl", emailParams)
+            .then(function(response) {
+                console.log("Sent email successfully", response);
+            }, function(error) {
+                console.log("Failed to send email", error);
+            });
+
+        // Redirect to Home page after a successful login
+        setTimeout(function() {
+            window.location.href = "Home.html"; 
+        }, 2000);
+    } else {
+        // Display error message
+        messageContainer.textContent = "Invalid username or password!";
+        messageContainer.className = "message error-message";
+        messageContainer.style.display = "block";  // Show the message container
+    }
+});
+
+</script>
+
+</body>
+</html>
+
