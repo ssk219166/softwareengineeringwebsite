@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Software Engineering Solutions</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header Styles */
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo h1 {
+  margin: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.nav-links a:hover {
+  background: #575757;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  background: #0056b3;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background: #f39c12;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background: #e67e22;
+}
+
+/* About Section */
+.about {
+  padding: 50px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+/* Services Section */
+.services {
+  background: #e9ecef;
+  padding: 50px 20px;
+}
+
+.services .container {
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.service-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.service-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.service-item p {
+  color: #555;
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.contact h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.contact button {
+  padding: 10px 20px;
+  background: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact button:hover {
+  background: #004080;
+}
+
+/* Footer Styles */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>SE Solutions</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Building the Future with Software</h2>
+    <p>Your trusted partner in innovative software engineering solutions.</p>
+    <a href="#services" class="cta-button">Our Services</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are a team of passionate software engineers committed to delivering high-quality solutions. Our team focuses on modern technology and cutting-edge strategies to help your business thrive in a digital world.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-list">
+        <div class="service-item">
+          <h3>Custom Software Development</h3>
+          <p>We build tailor-made software solutions to meet the unique needs of your business.</p>
+        </div>
+        <div class="service-item">
+          <h3>Web & Mobile Applications</h3>
+          <p>Our expert developers design user-friendly, responsive websites and apps.</p>
+        </div>
+        <div class="service-item">
+          <h3>Cloud Solutions</h3>
+          <p>Enhance your infrastructure with scalable, secure cloud solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 SE Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
