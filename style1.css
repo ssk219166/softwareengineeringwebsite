@@ -58,6 +58,18 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff; }
+.lock-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.lock-icon img {
+    width: 60px; /* Adjust size of the image */
+    height: 60px;
+    object-fit: contain; /* Ensure the image scales nicely */
+}
+
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
