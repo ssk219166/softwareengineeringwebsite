@@ -7,27 +7,24 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Resetting default styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body */
         body {
             font-family: 'Raleway', sans-serif;
             line-height: 1.6;
-            background-color: #f8f9fa; /* Light background color */
+            background-color: #f8f9fa; 
             color: #333;
         }
 
-        /* Navbar */
         header {
-            background-color: #2c3e50; /* Dark blue background */
+            background-color: #2c3e50; 
             color: white;
             padding: 20px 0;
-            position: relative; /* Positioning context for the login button */
+            position: relative; 
         }
 
         nav {
@@ -40,7 +37,7 @@
 
         nav .logo h1 {
             font-size: 2.5rem;
-            color: #ff6347; /* Tomato color for the logo */
+            color: #ff6347; 
         }
 
         nav ul {
@@ -53,27 +50,26 @@
         }
 
         nav ul li a {
-            color: #ecf0f1; /* Light grey color for nav items */
+            color: #ecf0f1; 
             text-decoration: none;
             font-size: 1.2rem;
             transition: color 0.3s ease-in-out;
         }
 
         nav ul li a:hover {
-            color: #ff6347; /* Hover effect with Tomato color */
+            color: #ff6347; 
         }
 
-        /* Login Button */
         .login-btn {
             position: absolute;
             top: 20px;
             right: 20px;
             width: 50px;
             height: 50px;
-            background: linear-gradient(45deg, #ff007f, #ff8c00, #40e0d0); /* Gradient button */
+            background: linear-gradient(45deg, #ff007f, #ff8c00, #40e0d0); 
             color: white;
             font-size: 1.5rem;
-            border-radius: 50%; /* Circular shape */
+            border-radius: 50%; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -83,11 +79,10 @@
         }
 
         .login-btn:hover {
-            background: linear-gradient(45deg, #ff6347, #ff1493, #00bfff); /* Lighter gradient on hover */
-            transform: scale(1.1); /* Slight zoom effect on hover */
+            background: linear-gradient(45deg, #ff6347, #ff1493, #00bfff);
+            transform: scale(1.1);
         }
 
-        /* Dropdown Menu */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -127,9 +122,8 @@
             color: white;
         }
 
-        /* Hero Section */
         #hero {
-            background: linear-gradient(to right, #3498db, #9b59b6); /* Blue to purple gradient */
+            background: linear-gradient(to right, #3498db, #9b59b6); 
             color: white;
             padding: 100px 0;
             text-align: center;
@@ -138,7 +132,7 @@
         #hero h1 {
             font-size: 4rem;
             margin-bottom: 20px;
-            color: #fff; /* White color for the header */
+            color: #fff;
         }
 
         #hero p {
@@ -147,7 +141,7 @@
         }
 
         .cta-button {
-            background-color: #ff6347; /* Tomato color */
+            background-color: #ff6347;
             padding: 10px 25px;
             text-decoration: none;
             color: white;
@@ -157,16 +151,15 @@
         }
 
         .cta-button:hover {
-            background-color: #e74c3c; /* Darker Tomato on hover */
+            background-color: #e74c3c; 
         }
 
-        /* Section Styling */
         .section {
             padding: 60px 20px;
             max-width: 1200px;
             margin: 0 auto;
             background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a subtle effect */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
             border-radius: 8px;
             margin-bottom: 30px;
         }
@@ -175,7 +168,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 40px;
-            color: #3498db; /* Blue color for section titles */
+            color: #3498db;
         }
 
         .services-container, .portfolio-container {
@@ -186,7 +179,7 @@
 
         .service, .portfolio-item {
             width: 30%;
-            background-color: #ecf0f1; /* Light grey background for service/portfolio items */
+            background-color: #ecf0f1; 
             padding: 20px;
             border-radius: 8px;
             text-align: center;
@@ -196,13 +189,13 @@
         }
 
         .service:hover, .portfolio-item:hover {
-            transform: translateY(-10px); /* Lift effect on hover */
+            transform: translateY(-10px); 
         }
 
         .service h3, .portfolio-item h3 {
             font-size: 1.6rem;
             margin-bottom: 15px;
-            color: #2c3e50; /* Dark text color for headings */
+            color: #2c3e50; 
         }
 
         .portfolio-item img {
@@ -212,7 +205,6 @@
             margin-bottom: 15px;
         }
 
-        /* Contact Form */
         form {
             max-width: 600px;
             margin: 0 auto;
@@ -241,7 +233,7 @@
         }
 
         button {
-            background-color: #3498db; /* Blue background for buttons */
+            background-color: #3498db; 
             color: white;
             padding: 12px 25px;
             border: none;
@@ -252,12 +244,11 @@
         }
 
         button:hover {
-            background-color: #2980b9; /* Darker blue on hover */
+            background-color: #2980b9; 
         }
 
-        /* Footer */
         footer {
-            background-color: #2c3e50; /* Dark blue footer */
+            background-color: #2c3e50;
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -267,7 +258,6 @@
             font-size: 1rem;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .services-container, .portfolio-container {
                 flex-direction: column;
@@ -281,7 +271,7 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    
     <header>
         <nav>
             <div class="logo">
@@ -291,32 +281,32 @@
             <ul>
                 <li><a href="Home.html">Home</a></li>
                 <li><a href="About.html">About</a></li>
-                <li><a href="SE Solutions.html">Solutions</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <!-- Login Button -->
+            
             <div class="dropdown">
                 <button class="login-btn">L</button>
                 <div class="dropdown-content">
-                    <a href="login.html">Sign in with Username</a>
-                    <a href="Login2.html">Sign in with Email</a>
+                    <a href="login.html">Sign in with Usernames</a>
+                    <a href="login2.html">Sign in with Emails</a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+   
     <section id="hero">
         <div class="hero-content">
             <h1>Welcome to TechSage</h1>
             <p>Innovative software solutions for a digital world.</p>
-            <a href="#contact" class="cta-button">Contact Us</a>
+            <a href="Contact.html" class="cta-button">Contact Us</a>
         </div>
     </section>
 
-    <!-- Content sections go here -->
+    
 
-    <!-- Footer -->
+    
     <footer>
         <p>&copy; 2025 TechSage Software Engineering. All rights reserved.</p>
     </footer>
