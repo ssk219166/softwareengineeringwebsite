@@ -171,6 +171,31 @@
             color: #3498db;
         }
 
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .about-text {
+            width: 60%;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-img {
+            width: 35%;
+            text-align: center;
+        }
+
+        .about-img img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
         .services-container, .portfolio-container {
             display: flex;
             justify-content: space-between;
@@ -267,6 +292,15 @@
             .service, .portfolio-item {
                 width: 80%;
             }
+
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-text, .about-img {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -295,7 +329,6 @@
         </nav>
     </header>
 
-   
     <section id="hero">
         <div class="hero-content">
             <h1>Welcome to TechSage</h1>
@@ -304,9 +337,20 @@
         </div>
     </section>
 
-    
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About TechSage</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>At TechSage, we specialize in creating custom software solutions tailored to your business needs. With a team of expert engineers, designers, and strategists, we help companies leverage technology to innovate and grow in an ever-changing digital world. Our services span a variety of industries, from healthcare and finance to retail and education, and we strive to deliver solutions that drive real impact and success.</p>
+                <p>We believe in building long-lasting relationships with our clients through trust, transparency, and the highest quality of service. Our goal is to empower businesses to achieve their full potential by providing them with powerful, user-friendly software tools and solutions.</p>
+            </div>
+            <div class="about-img">
+                <img src="https://via.placeholder.com/400" alt="TechSage Team">
+            </div>
+        </div>
+    </section>
 
-    
     <footer>
         <p>&copy; 2025 TechSage Software Engineering. All rights reserved.</p>
     </footer>
