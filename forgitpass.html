@@ -174,37 +174,6 @@
             loadingMessage.style.display = "block";
             document.getElementById("sendButton").disabled = true;
 
-            // Send email to backend
-            fetch('http://localhost:3000/send-reset-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ email: email })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    loadingMessage.style.display = "none";
-                    document.getElementById("sendButton").disabled = false;
-
-                    if (data.message) {
-                        successMessage.textContent = data.message;
-                        successMessage.style.display = "block";
-                    }
-
-                    // Reset the form after some time
-                    setTimeout(function () {
-                        document.getElementById("emailInput").value = "";
-                        successMessage.style.display = "none";
-                    }, 5000);
-                })
-                .catch(error => {
-                    loadingMessage.style.display = "none";
-                    document.getElementById("sendButton").disabled = false;
-                    errorMessage.textContent = "Failed to send email, please try again.";
-                    errorMessage.style.display = "block";
-                });
-        });
     </script>
 </body>
 
