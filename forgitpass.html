@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,103 +6,187 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Font Awesome Icons  -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
 
-    <!-- Google Fonts  -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-    <title>Forgot Password UI Using CSS - @code.scientist x @codingtorque</title>
+    <title>Forgot Password</title>
 
-<style>
-    * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
 
-body {
-    background-color: #ff99f5;
-    background-image:
-        radial-gradient(at 61% 4%, hsla(303, 91%, 61%, 1) 0px, transparent 50%),
-        radial-gradient(at 75% 66%, hsla(196, 91%, 79%, 1) 0px, transparent 50%),
-        radial-gradient(at 98% 88%, hsla(76, 87%, 78%, 1) 0px, transparent 50%),
-        radial-gradient(at 23% 16%, hsla(238, 96%, 77%, 1) 0px, transparent 50%),
-        radial-gradient(at 95% 65%, hsla(13, 91%, 75%, 1) 0px, transparent 50%),
-        radial-gradient(at 10% 79%, hsla(228, 96%, 69%, 1) 0px, transparent 50%),
-        radial-gradient(at 85% 58%, hsla(328, 81%, 68%, 1) 0px, transparent 50%);
-    background-repeat: no-repeat;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15rem 0;
-}
+        body {
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-.card {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(0, 0, 0, 0.75);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 40px;
-}
+        .card {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(0, 0, 0, 0.75);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
 
-.lock-icon {
-    font-size: 3rem;
-}
+        .lock-icon {
+            font-size: 4rem;
+            color: deepskyblue;
+            margin-bottom: 20px;
+        }
 
-h2 {
-    font-size: 1.5rem;
-    margin-top: 10px;
-    text-transform: uppercase;
-}
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 10px;
+            text-transform: uppercase;
+            color: white;
+            font-weight: 600;
+        }
 
-p {
-    font-size: 12px;
-}
+        p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
 
-.passInput {
-    margin-top: 15px;
-    width: 80%;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid deepskyblue;
-    font-size: 15px;
-    color: white;
-    outline: none;
-}
+        .passInput {
+            margin-top: 15px;
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid deepskyblue;
+            font-size: 16px;
+            color: white;
+            outline: none;
+            padding: 8px;
+        }
 
-button {
-    margin-top: 15px;
-    width: 80%;
-    background-color: deepskyblue;
-    color: white;
-    padding: 10px;
-    text-transform: uppercase;
-}
-</style>
+        .passInput:focus {
+            border-bottom-color: #4ac1f2;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+            background-color: deepskyblue;
+            color: white;
+            padding: 12px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #38a1db;
+        }
+
+        .loading {
+            display: none;
+            color: white;
+            font-size: 14px;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* Spinner style */
+        .spinner {
+            margin-top: 15px;
+            width: 30px;
+            height: 30px;
+            border: 4px solid #fff;
+            border-top: 4px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 
 <body>
-   <div class="card">
-    <!-- Lock icon image -->
-    <p class="lock-icon">
-        <img src="download (1).jpeg" alt="Lock Icon" class="lock-img">
-    </p>
-    <h2>Forgot Password?</h2>
-    <p>You can reset your Password here</p>
-    <input type="text" class="passInput" placeholder="Email address">
-    <button>Send My Password</button>
-</div>
+    <div class="card">
+        <!-- Lock icon image -->
+        <div class="lock-icon">
+            <img src="download (1).jpeg" alt="Lock Icon" class="lock-img">
+        </div>
+        <h2>Forgot Password?</h2>
+        <p>You can reset your Password here. Please enter your registered email.</p>
+        <input type="email" id="emailInput" class="passInput" placeholder="Email address" required>
+        <button id="sendButton">Send My Password</button>
+        <div class="loading" id="loadingMessage">
+            <div class="spinner"></div> Processing...
+        </div>
+        <div id="errorMessage" class="loading" style="color: red;"></div>
+        <div id="successMessage" class="loading" style="color: green;"></div>
+    </div>
 
+    <script>
+        document.getElementById("sendButton").addEventListener("click", function() {
+            const email = document.getElementById("emailInput").value;
+            const loadingMessage = document.getElementById("loadingMessage");
+            const successMessage = document.getElementById("successMessage");
+            const errorMessage = document.getElementById("errorMessage");
+
+            // Clear previous messages
+            successMessage.style.display = "none";
+            errorMessage.style.display = "none";
+
+            // Basic email validation
+            if (!email || !/\S+@\S+\.\S+/.test(email)) {
+                errorMessage.textContent = "Please enter a valid email address.";
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            // Show loading spinner and hide the button
+            loadingMessage.style.display = "block";
+            document.getElementById("sendButton").disabled = true;
+
+            // Simulate sending email (mock the password reset process)
+            setTimeout(function() {
+                loadingMessage.style.display = "none";
+                document.getElementById("sendButton").disabled = false;
+
+                // For a real system, you'd use AJAX to send the request to the backend here.
+                // Mocking the success response
+                successMessage.textContent = "A password reset link has been sent to your email.";
+                successMessage.style.display = "block";
+
+                // Reset the form after some time
+                setTimeout(function() {
+                    document.getElementById("emailInput").value = "";
+                    successMessage.style.display = "none";
+                }, 5000);
+            }, 2000); // Simulating network delay
+        });
+    </script>
 </body>
 
 </html>
