@@ -124,8 +124,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -148,7 +153,7 @@
     </div>
 
     <script>
-        document.getElementById("sendButton").addEventListener("click", function() {
+        document.getElementById("sendButton").addEventListener("click", function () {
             const email = document.getElementById("emailInput").value;
             const loadingMessage = document.getElementById("loadingMessage");
             const successMessage = document.getElementById("successMessage");
@@ -169,22 +174,36 @@
             loadingMessage.style.display = "block";
             document.getElementById("sendButton").disabled = true;
 
-            // Simulate sending email (mock the password reset process)
-            setTimeout(function() {
-                loadingMessage.style.display = "none";
-                document.getElementById("sendButton").disabled = false;
+            // Send email to backend
+            fetch('http://localhost:3000/send-reset-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    loadingMessage.style.display = "none";
+                    document.getElementById("sendButton").disabled = false;
 
-                // For a real system, you'd use AJAX to send the request to the backend here.
-                // Mocking the success response
-                successMessage.textContent = "A password reset link has been sent to your email.";
-                successMessage.style.display = "block";
+                    if (data.message) {
+                        successMessage.textContent = data.message;
+                        successMessage.style.display = "block";
+                    }
 
-                // Reset the form after some time
-                setTimeout(function() {
-                    document.getElementById("emailInput").value = "";
-                    successMessage.style.display = "none";
-                }, 5000);
-            }, 2000); // Simulating network delay
+                    // Reset the form after some time
+                    setTimeout(function () {
+                        document.getElementById("emailInput").value = "";
+                        successMessage.style.display = "none";
+                    }, 5000);
+                })
+                .catch(error => {
+                    loadingMessage.style.display = "none";
+                    document.getElementById("sendButton").disabled = false;
+                    errorMessage.textContent = "Failed to send email, please try again.";
+                    errorMessage.style.display = "block";
+                });
         });
     </script>
 </body>
