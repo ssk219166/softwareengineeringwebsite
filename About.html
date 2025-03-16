@@ -255,9 +255,8 @@
     <div class="about-container">
         <div class="about-text">
             <h3>Hi, I'm Sithum</h3>
-            <p>I am a passionate software engineer with a strong background in developing efficient, scalable, and user-centric applications. Over the years, I have worked with various technologies, including web development frameworks like React, Angular, and back-end solutions like Node.js, Python, and Java. I enjoy problem-solving and have a keen interest in creating software that makes a difference in the world.</p>
-            <p>My journey as a software engineer began with my curiosity about how things work behind the scenes. This curiosity evolved into a love for coding, which has driven me to pursue a career where I can turn ideas into reality. Whether it’s building a web application, optimizing an algorithm, or developing mobile apps, I enjoy every step of the process.</p>
-            <p>With over 14 years of experience, I have honed my skills in both front-end and back-end development, working on diverse projects that have strengthened my problem-solving abilities. My approach is focused on clean, maintainable code, and delivering high-quality solutions that meet user needs and business goals.</p>
+            <p>I am a passionate software engineer with a strong background in developing efficient, scalable, and user-centric applications. Over the years, I have worked with various technologies...</p>
+            <p>With over 14 years of experience, I have honed my skills in both front-end and back-end development...</p>
             <a href="#contact" class="cta-button">Contact Me</a>
         </div>
         <div class="about-image">
@@ -275,7 +274,7 @@
     <div class="modal-content">
         <button class="close-btn" onclick="closeModal()">×</button>
         <h2>Login</h2>
-        <form action="Home.html" method="POST">
+        <form id="loginForm" method="POST">
             <input type="text" id="usernameOrEmail" name="usernameOrEmail" placeholder="Username or Email (e.g., user@example.com)" required>
             <input type="password" id="password" name="password" placeholder="Password (e.g., password123)" required>
             <button type="submit">Login</button>
@@ -300,12 +299,33 @@
             closeModal();
         }
     }
+
+    // Predefined valid credentials
     const validCredentials = [
-    { username: "admin", password: "pass123" },  
-    { username: "sithum", password: "sithu2011" }, 
-    { username: "Anuhas", password: "anuhas2010" },  
-    { username: "Amandi", password: "amandi01" },
-];
+        { username: "admin", password: "pass123" },  
+        { username: "sithum", password: "sithu2011" }, 
+        { username: "Anuhas", password: "anuhas2010" },  
+        { username: "Amandi", password: "amandi01" }
+    ];
+
+    // Handle form submission
+    document.getElementById('loginForm').onsubmit = function(event) {
+        event.preventDefault();  // Prevent the default form submission
+        
+        // Get form input values
+        const usernameOrEmail = document.getElementById('usernameOrEmail').value;
+        const password = document.getElementById('password').value;
+        
+        // Check if the credentials are valid
+        const user = validCredentials.find(user => (user.username === usernameOrEmail || user.email === usernameOrEmail) && user.password === password);
+        
+        if (user) {
+            // Redirect to Home.html if credentials are valid
+            window.location.href = "Home.html";
+        } else {
+            alert("Invalid username/email or password");
+        }
+    };
 </script>
 
 </body>
