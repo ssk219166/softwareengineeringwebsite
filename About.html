@@ -20,6 +20,7 @@
             padding: 2rem 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         header h1 {
@@ -139,6 +140,29 @@
             background-color: #e74c3c;
         }
 
+        .login-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff007f, #ff8c00, #40e0d0);
+            color: white;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background: linear-gradient(45deg, #ff6347, #ff1493, #00bfff);
+            transform: scale(1.1);
+        }
+
         @media (max-width: 768px) {
             .about-container {
                 flex-direction: column;
@@ -156,6 +180,11 @@
 <header>
     <h1>Software Engineering Portfolio</h1>
     <p>Your path to innovative software solutions</p>
+
+    <!-- Login Button -->
+    <button class="login-btn" title="Login">
+        <span>L</span> <!-- This "L" can be replaced with an icon if needed -->
+    </button>
 </header>
 
 <nav>
